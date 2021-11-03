@@ -1,0 +1,7 @@
+<launch>
+
+    <node name='dir_plot' pkg='rqt_plot' type='rqt_plot' args='/android_input_dir/angular/z'/>
+    <node name='vel_plot' pkg='rqt_plot' type='rqt_plot' args='/android_input_velin/data /android_input_vel/data'/>
+    <node name='car_plot' pkg='rqt_plot' type='rqt_plot' args='/pub_dir/data /pub_vel/data'/>
+
+</launch>
