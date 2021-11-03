@@ -1,0 +1,1 @@
+export ROS_IP=0.0.0.0
