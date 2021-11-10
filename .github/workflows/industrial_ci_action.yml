@@ -1,19 +1,19 @@
 # This config uses industrial_ci (https://github.com/ros-industrial/industrial_ci.git).
 # For troubleshooting, see readme (https://github.com/ros-industrial/industrial_ci/blob/master/README.rst)
 
-name: CI
+name: AutoMec ROS CI Workflow w/ ros-industrial/industrial-ci
 
 # This determines when this workflow is run
 on: [push, pull_request] # on all pushes and PRs
 
-# or more fine-grained
+# # or more fine-grained
 # on:
 #   # When master or melodic-devel branch is pushed to
 #   push:
-#     branches: [ master, melodic-devel ]
+#     branches: [ dev ]
 #   # When there is a pull request against master
 #   pull_request:
-#     branches: [ master ]
+#     branches: [ dev ]
 
 jobs:
   industrial_ci:
