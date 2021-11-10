@@ -20,8 +20,8 @@ jobs:
     strategy:
       matrix:
         env:
-          - {ROS_DISTRO: noetic, ROS_REPO: testing, ROSDEP_SKIP_KEYS: true}
-          - {ROS_DISTRO: noetic, ROS_REPO: main, ROSDEP_SKIP_KEYS: true}
+          - {ROS_DISTRO: noetic, ROS_REPO: testing, DEBUG_BASH: true}
+          - {ROS_DISTRO: noetic, ROS_REPO: main, DEBUG_BASH: true}
     env:
       CCACHE_DIR: /github/home/.ccache # Directory for ccache (and how we enable ccache in industrial_ci)
     runs-on: ubuntu-latest
