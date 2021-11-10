@@ -20,10 +20,12 @@ jobs:
     strategy:
       matrix:
         env:
-          - {ROS_DISTRO: noetic, ROS_REPO: testing, VERBOSE_OUTPUT: true}
-          - {ROS_DISTRO: noetic, ROS_REPO: main, VERBOSE_OUTPUT: true}
+          - {ROS_DISTRO: noetic, ROS_REPO: testing, BEFORE_INIT='ros_ci_dependencies.sh'}
+          - {ROS_DISTRO: noetic, ROS_REPO: main, BEFORE_INIT='ros_ci_dependencies.sh'}
     env:
       CCACHE_DIR: /github/home/.ccache # Directory for ccache (and how we enable ccache in industrial_ci)
+#       global:
+#         - BEFORE_INIT='ros_ci_dependencies.sh'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
