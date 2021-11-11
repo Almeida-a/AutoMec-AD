@@ -20,13 +20,13 @@ jobs:
     strategy:
       matrix:
         env:
-          - {ROS_DISTRO: noetic, ROS_REPO: testing, BUILDER: catkin_make}
-          - {ROS_DISTRO: noetic, ROS_REPO: main, BUILDER: catkin_make}
+          - {ROS_DISTRO: noetic, ROS_REPO: testing, BUILDER: catkin_make, TARGET_WORKSPACE='github:AutoMecUA/Automec-AD/', BEFORE_INIT='ros_ci_dependencies.sh'}
+          - {ROS_DISTRO: noetic, ROS_REPO: main, BUILDER: catkin_make, TARGET_WORKSPACE='github:AutoMecUA/Automec-AD/', BEFORE_INIT='ros_ci_dependencies.sh'}
     env:
       CCACHE_DIR: /github/home/.ccache # Directory for ccache (and how we enable ccache in industrial_ci)
-      global:
-        - BEFORE_INIT='ros_ci_dependencies.sh'
-        - TARGET_WORKSPACE='github:AutoMecUA/Automec-AD/'
+#       global:
+#         - BEFORE_INIT='ros_ci_dependencies.sh'
+#         - TARGET_WORKSPACE='github:AutoMecUA/Automec-AD/'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
