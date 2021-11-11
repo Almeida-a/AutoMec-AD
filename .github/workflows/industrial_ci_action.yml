@@ -20,8 +20,8 @@ jobs:
     strategy:
       matrix:
         env:
-          - {ROS_DISTRO: noetic, ROS_REPO: testing, BUILDER: catkin_make}
-          - {ROS_DISTRO: noetic, ROS_REPO: main, BUILDER: catkin_make}
+          - {ROS_DISTRO: noetic, ROS_REPO: testing, BUILDER: catkin_make, BEFORE_INIT='sudo apt-get install ros-noetic-ros-controllers ros-noetic-ackermann-msgs'}
+          - {ROS_DISTRO: noetic, ROS_REPO: main, BUILDER: catkin_make, BEFORE_INIT='sudo apt-get install ros-noetic-ros-controllers ros-noetic-ackermann-msgs'}
     env:
       CCACHE_DIR: /github/home/.ccache # Directory for ccache (and how we enable ccache in industrial_ci)
 #       global:
